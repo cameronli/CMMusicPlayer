@@ -7,13 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@class ViewController;
+@class MusicPlayViewController;
+@class LRCShowViewController;
+@class AboutViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) UITabBarController *tabBarController;
+
+@property (strong, nonatomic) MusicPlayViewController *musicPlayerViewController;
+
+@property (strong, nonatomic) LRCShowViewController *lrcShowViewController;
+
+@property (strong, nonatomic) AboutViewController *aboutViewController;
+
+@property (strong, nonatomic) AVAudioPlayer *player;
+
+@property (strong, nonatomic) NSString *currentSongName;
 
 @end

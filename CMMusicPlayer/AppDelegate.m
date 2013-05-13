@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "MusicPlayViewController.h"
+#import "LRCShowViewController.h"
+#import "AboutViewController.h"
 
 @implementation AppDelegate
 
@@ -16,8 +18,15 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    self.musicPlayerViewController = [[MusicPlayViewController alloc] init];
+    self.lrcShowViewController = [[LRCShowViewController alloc] init];
+    self.aboutViewController = [[AboutViewController alloc] init];
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    
+    self.tabBarController.viewControllers = @[self.musicPlayerViewController, self.lrcShowViewController, self.aboutViewController];
+    
+    self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
